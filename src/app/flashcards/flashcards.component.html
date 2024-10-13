@@ -1,0 +1,14 @@
+<ActionBar [title]="flashcardSet.title"></ActionBar>
+
+<GridLayout rows="*, auto">
+  <StackLayout row="0" class="card" (tap)="onFlipCard()">
+    <Label [text]="showAnswer ? 'Answer' : 'Question'" class="text-center text-primary"></Label>
+    <Label [text]="showAnswer ? flashcardSet.cards[currentCardIndex].answer : flashcardSet.cards[currentCardIndex].question" textWrap="true" class="card-content"></Label>
+    <Label [text]="'Tap to ' + (showAnswer ? 'see question' : 'reveal answer')" class="text-center text-muted"></Label>
+  </StackLayout>
+
+  <GridLayout row="1" columns="*, *" class="m-y-10">
+    <Button text="Previous" (tap)="onPreviousCard()" class="btn btn-outline" col="0"></Button>
+    <Button text="Next" (tap)="onNextCard()" class="btn btn-outline" col="1"></Button>
+  </GridLayout>
+</GridLayout>

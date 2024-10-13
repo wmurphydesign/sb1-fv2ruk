@@ -1,0 +1,50 @@
+@import '@nativescript/theme/css/core.css';
+@import '@nativescript/theme/css/default.css';
+
+.card-set {
+  background-color: #f0f0f0;
+  border-radius: 10;
+  margin: 5 10;
+  padding: 10;
+}
+
+.card-set-title {
+  font-size: 18;
+  font-weight: bold;
+}
+
+.card-set-count {
+  font-size: 14;
+  color: #666;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 10;
+  margin: 20;
+  padding: 20;
+  text-align: center;
+}
+
+.card-content {
+  font-size: 20;
+  margin-top: 20;
+  margin-bottom: 20;
+}
+
+.activity-indicator {
+  width: 50;
+  height: 50;
+}
+
+.ad-wall {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.ad-content {
+  background-color: white;
+  border-radius: 10;
+  padding: 20;
+  width: 80%;
+  height: 200;
+}

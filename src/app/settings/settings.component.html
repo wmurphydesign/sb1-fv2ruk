@@ -1,0 +1,9 @@
+<ActionBar title="Settings"></ActionBar>
+
+<StackLayout class="p-10">
+  <Label text="Change Colour Scheme" class="h3"></Label>
+  <ListPicker [items]="colorSchemes" [(ngModel)]="selectedColorScheme" (selectedIndexChange)="onChangeColorScheme()"></ListPicker>
+
+  <Button text="Upgrade" (tap)="onUpgrade()" class="btn btn-primary m-t-20"></Button>
+  <Button text="Support/Feedback" (tap)="onSupportFeedback()" class="btn btn-outline m-t-10"></Button>
+</StackLayout>

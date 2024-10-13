@@ -1,0 +1,14 @@
+<ActionBar title="Fl·ai·shCards"></ActionBar>
+
+<GridLayout rows="auto, *">
+  <Label text="Card Sets" class="h2 text-center m-y-10"></Label>
+  <ScrollView row="1">
+    <StackLayout>
+      <GridLayout *ngFor="let set of cardSets" columns="*, auto" class="card-set" (tap)="onSelectSet(set.id)">
+        <Label [text]="set.title" col="0" class="card-set-title"></Label>
+        <Label [text]="set.cards.length + ' cards'" col="1" class="card-set-count"></Label>
+      </GridLayout>
+      <Button text="Create New Set" (tap)="onCreateNewSet()" class="btn btn-primary"></Button>
+    </StackLayout>
+  </ScrollView>
+</GridLayout>

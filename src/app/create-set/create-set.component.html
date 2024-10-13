@@ -1,0 +1,29 @@
+<ActionBar title="Create New Set"></ActionBar>
+
+<GridLayout>
+  <ScrollView>
+    <StackLayout class="p-10">
+      <Label text="Topic:" class="h3"></Label>
+      <TextField [(ngModel)]="topic" hint="What topic do you want to study?"></TextField>
+
+      <Label text="Level of expertise:" class="h3 m-t-10"></Label>
+      <ListPicker [items]="['Beginner', 'Intermediate', 'Advanced']" [(ngModel)]="level"></ListPicker>
+
+      <Label text="Number of flashcards:" class="h3 m-t-10"></Label>
+      <Slider [(ngModel)]="cardCount" minValue="5" maxValue="50" step="5"></Slider>
+      <Label [text]="cardCount.toString()" class="text-center"></Label>
+
+      <Button text="Create Flashcards" (tap)="onCreateFlashcards()" class="btn btn-primary m-t-20" [isEnabled]="!isGenerating"></Button>
+    </StackLayout>
+  </ScrollView>
+
+  <ActivityIndicator [busy]="isGenerating" class="activity-indicator"></ActivityIndicator>
+
+  <GridLayout *ngIf="showAdWall" class="ad-wall">
+    <StackLayout class="ad-content">
+      <Label text="Advertisement" class="h2 text-center"></Label>
+      <Label text="Please wait while we prepare your flashcards..." textWrap="true" class="text-center"></Label>
+      <ActivityIndicator busy="true" class="activity-indicator"></ActivityIndicator>
+    </StackLayout>
+  </GridLayout>
+</GridLayout>
